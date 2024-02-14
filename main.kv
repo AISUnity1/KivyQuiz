@@ -1,0 +1,584 @@
+<Quiz>:
+	Home:
+	Help:
+	Q1:
+	Q2:
+	Q3:
+	Q4:
+	Q5:
+	FinalPage:
+
+
+
+
+
+<Home>:
+	name:"home"
+	Image:
+		source:"1X/bg.png"
+	AnchorLayout:
+		anchor_y:"top"
+		Button:
+			background_color:(1,1,1,1)
+			disabled:True
+			size_hint:(100,.1)
+			background_normal:""   
+	Button:
+		text:"Help"
+		size_hint:(.3,.08)
+		pos_hint:{"x":.69,"y":.91}
+		color:"black"
+		on_press:
+			root.manager.transition.direction="left"
+			app.root.current="help"
+	Label:
+		text:"Quiz"
+		size_hint:(.3,.08)
+		pos_hint:{"x":.0,"y":.91}
+		color:"yellow"
+	Button:
+		text:"Exit"
+		size_hint:(.3,.08)
+		pos_hint:{"x":.35,"y":.91}
+		color:"black"''
+		on_press:animate(self)
+	Image:
+		source:"bg.png"
+		allow_stretch:True
+		pos_hint:{"x":.1,"y":.2}
+		size_hint:(.8,.8)
+	RoundedButton:
+		text:"Start Quiz"
+		size_hint:(.5,.1)
+		color:"black"
+		on_press:print("Started")
+		pos_hint:{"x":.25,"y":.15}
+		on_press:
+		    app.root.current='q1'
+		    root.manager.transition.direction="left"
+<RoundedButton@Button>:
+	background_color:(0,0,0,0)
+	background_normal:""
+	canvas.before:
+		Color:
+			rgba:(1,1,0,1)
+		RoundedRectangle:
+			size:self.size
+			pos:self.pos
+			radius:[30]
+
+<Help>:
+	name:"help"
+	AnchorLayout:
+		anchor_y:"top"
+		Button:
+			background_color:(1,1,0,1)
+			disabled:True
+			size_hint:(100,.1)
+			background_normal:""
+	Button:
+		text:"Back"
+		size_hint:(.3,.08)
+		pos_hint:{"x":.02,"y":.91}
+		color:"black"
+		color:"#00FC00"
+		font_size:35
+		on_press:
+			root.manager.transition.direction="right"
+			app.root.current="home"
+	AnchorLayout:
+		anchor_y:"bottom"
+		Image:
+			source:"help.png"
+			size_hint:(.99,.97)
+			pos_hint:{"x":.0,"y":.0}
+			allow_stretch:True
+
+
+		
+
+
+<Q1>:
+    name:'q1'
+    AnchorLayout:
+		anchor_y:"top"
+		Button:
+			background_color:(1,1,0,1)
+			disabled:True
+			size_hint:(100,.1)
+			background_normal:""
+    BoxLayout:
+        Label:
+            text:'Q1'
+            color:'#00FC00'
+            size_hint:(.3,.08)
+	    	pos_hint:{"x":.02,"y":.91}
+    Button:
+    	id:e
+        text:'Next'
+        size_hint:(1,.1)
+	    pos_hint:{'x':.0,'y':.0}
+	    on_press: app.root.current='q2'
+	    disabled:True
+	Label:
+		text:"Who is father of Computer?"
+		color:"yellow"
+		size_hint:(1,.1)
+		pos_hint:{"x":.0,"y":.8}
+	
+	Button:
+		id:a
+		text:"a. Newton"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.0,"y":.4}
+		font_size:16
+		color:"black"
+
+		on_press:
+			a.background_color="red"
+			a.background_normal=""
+			b.disabled=True
+			c.disabled=True
+			d.disabled=True
+			e.disabled=False
+	Button:
+		id:b
+		text:"b. Charles Babbage"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.5,"y":.4}
+		font_size:16
+		color:"black"
+		on_press:
+			b.background_color="#00FC00"
+			b.background_normal=""
+			a.disabled=True
+			c.disabled=True
+			d.disabled=True
+			e.disabled=False
+	Button:
+		id:c
+		text:"c. Guido Van Rossum"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.0,"y":.3}
+		font_size:16
+		color:"black"
+		on_press:
+			c.background_color="red"
+			c.background_normal=""
+			a.disabled=True
+			b.disabled=True
+			d.disabled=True
+			e.disabled=False
+	Button:
+		id:d
+		text:"d. Albert Einstien"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.5,"y":.3}
+        font_size:16
+		color:"black" 
+		on_press:
+			d.background_color="red"
+			d.background_normal=""
+			a.disabled=True
+			b.disabled=True
+			c.disabled=True
+			e.disabled=False
+			
+ #^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#           
+  #--------IDS:(a,b,c,d,e)----------#          
+            
+            
+   
+<Q2>:
+    name:'q2'
+    AnchorLayout:
+		anchor_y:"top"
+		Button:
+			background_color:(1,1,0,1)
+			disabled:True
+			size_hint:(100,.1)
+			background_normal:""
+    BoxLayout:
+        Label:
+            text:'Q2'
+            color:'#00FC00'
+            size_hint:(.3,.08)
+	    	pos_hint:{"x":.02,"y":.91}
+
+    Button:
+    	id:f
+        text:'Next'
+        size_hint:(1,.1)
+	    pos_hint:{'x':.0,'y':.0}      
+	    on_press:app.root.current='q3'
+	    disabled:True
+
+	Label:
+		text:"Where is Mount Everest Located?"
+		color:"yellow"
+		size_hint:(1,.1)
+		pos_hint:{"x":.0,"y":.8}
+	
+	Button:	
+		id:g
+		text:"a. Nepal"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.0,"y":.4}
+		font_size:16
+		color:"black"
+		on_press:
+			g.background_color="#00FC00"
+			g.background_normal=""
+			h.disabled=True
+			i.disabled=True
+			j.disabled=True
+			f.disabled=False
+	Button:
+		id:h
+		text:"b. Pakistan"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.5,"y":.4}
+		font_size:16
+		color:"black"
+		on_press:
+			h.background_color="red"
+			h.background_normal=""
+			g.disabled=True
+			i.disabled=True
+			j.disabled=True
+			f.disabled=False
+	Button:
+		id:i
+		text:"c. Japan"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.0,"y":.3}
+		font_size:16
+		color:"black"
+		on_press:
+			i.background_color="red"
+			i.background_normal=""
+			g.disabled=True
+			h.disabled=True
+			j.disabled=True
+			f.disabled=False
+	Button:
+		id:j
+		text:"d. China"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.5,"y":.3}
+        font_size:16
+		color:"black"  
+		on_press:
+			j.background_color="red"
+			j.background_normal=""
+			g.disabled=True
+			h.disabled=True
+			i.disabled=True
+			f.disabled=False    
+            
+       
+
+
+ #^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#           
+  #--------IDS:(f,g,h,i,j)----------#   
+
+
+
+
+
+<Q3>:
+    name:'q3'
+    AnchorLayout:
+		anchor_y:"top"
+		Button:
+			background_color:(1,1,0,1)
+			disabled:True
+			size_hint:(100,.1)
+			background_normal:""
+    BoxLayout:
+        Label:
+            text:'Q3'
+            color:'#00FC00'
+            size_hint:(.3,.08)
+	    	pos_hint:{"x":.02,"y":.91}
+    Button:
+    	id:k
+        text:'Next'
+        size_hint:(1,.1)
+	    pos_hint:{'x':.0,'y':.0}
+	    on_press:app.root.current='q4' 
+	    disabled:True 
+	Label:
+		text:"Speed of light is :"
+		color:"yellow"
+		size_hint:(1,.1)
+		pos_hint:{"x":.0,"y":.8}
+	
+	Button:
+		id:l
+		markup:True
+		text:"a. 3x10[sup]8[/sup]"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.0,"y":.4}
+		font_size:18
+		color:"black"
+		on_press:
+			l.background_color="#00FC00"
+			l.background_normal=""
+			m.disabled=True
+			n.disabled=True
+			o.disabled=True
+			k.disabled=False
+		
+	Button:
+		id:m
+		markup:True
+		text:"b. 5x7[sup]8[/sup]"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.5,"y":.4}
+		font_size:18
+		color:"black"
+		on_press:
+			m.background_color="red"
+			m.background_normal=""
+			l.disabled=True
+			n.disabled=True
+			o.disabled=True
+			k.disabled=False
+		
+	Button:
+		id:n
+		markup:True
+		text:"c. 11x11[sup]7[/sup]"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.0,"y":.3}
+		font_size:18
+		color:"black"
+		on_press:
+			n.background_color="red"
+			n.background_normal=""
+			l.disabled=True
+			m.disabled=True
+			o.disabled=True
+			k.disabled=False
+		
+	Button:
+		id:o
+		markup:True
+		text:"d. 7x7[sup]5[/sup]"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.5,"y":.3}
+        font_size:18
+		color:"black"
+		on_press:
+			o.background_color="red"
+			o.background_normal=""
+			l.disabled=True
+			m.disabled=True
+			n.disabled=True
+			k.disabled=False   
+		     
+            
+
+ #^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#           
+ #--------IDS:(k,l,m,n,o)-----------#             
+            
+            
+<Q4>:
+    name:'q4'
+    AnchorLayout:
+		anchor_y:"top"
+		Button:
+			background_color:(1,1,0,1)
+			disabled:True
+			size_hint:(100,.1)
+			background_normal:""
+    BoxLayout:
+        Label:
+            text:'Q4'
+            color:'#00FC00'
+            size_hint:(.3,.08)
+	    	pos_hint:{"x":.02,"y":.91}
+    Button:
+    	id:p
+        text:'Next'
+        size_hint:(1,.1)
+	    pos_hint:{'x':.0,'y':.0}         
+	    on_press:app.root.current='q5'  
+	    disabled:True 
+	Label:
+		font_size:16
+		text:"Which one is not name of Muslim Scientist?"
+		color:"yellow"
+		size_hint:(1,.1)
+		pos_hint:{"x":.0,"y":.8}
+	
+	Button:
+		id:q
+		text:"a. Al-Beruni"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.0,"y":.4}
+		font_size:16
+		color:"black"
+		on_press:
+			q.background_color="red"
+			q.background_normal=""
+			p.disabled=False
+			r.disabled=True
+			s.disabled=True
+			t.disabled=True 
+	Button:
+		id:r
+		text:"b. Newton"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.5,"y":.4}
+		font_size:16
+		color:"black"
+		on_press:
+			r.background_color="#00FC00"
+			r.background_normal=""
+			p.disabled=False
+			q.disabled=True
+			s.disabled=True
+			t.disabled=True 
+	Button:
+		id:s
+		text:"c. Al-Razi"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.0,"y":.3}
+		font_size:16
+		color:"black"
+		on_press:
+			s.background_color="red"
+			s.background_normal=""
+			p.disabled=False
+			q.disabled=True
+			r.disabled=True
+			t.disabled=True 
+	Button:
+		id:t
+		text:"d. Ibn-Sina"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.5,"y":.3}
+        font_size:16
+		color:"black"
+		on_press:
+			t.background_color="red"
+			t.background_normal=""
+			p.disabled=False
+			q.disabled=True
+			r.disabled=True
+			s.disabled=True
+
+
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#           
+#--------IDS:(p,q,r,s,t)-----------# 
+            
+            
+<Q5>:
+    name:'q5'
+    AnchorLayout:
+		anchor_y:"top"
+		Button:
+			background_color:(1,1,0,1)
+			disabled:True
+			size_hint:(100,.1)
+			background_normal:""
+    BoxLayout:
+        Label:
+            text:'Q5'
+            color:'#00FC00'
+            size_hint:(.3,.08)
+	    	pos_hint:{"x":.02,"y":.91}
+    Button:
+    	id:u
+        text:'Next'
+        size_hint:(1,.1)
+	    pos_hint:{'x':.0,'y':.0}
+	    on_press:app.root.current='final_page'
+	    disabled:True
+	Label:
+		text:"Who invent light bulb?"
+		color:"yellow"
+		size_hint:(1,.1)
+		pos_hint:{"x":.0,"y":.8}
+	
+	Button:
+		id:v
+		text:"a. Thomas Edison"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.0,"y":.4}
+		font_size:16
+		color:"black"
+		on_press:
+			v.background_color="#00FC00"
+			v.background_normal=""
+			u.disabled=False
+			w.disabled=True
+			x.disabled=True
+			y.disabled=True
+	Button:
+		id:w
+		text:"b. Neil Armstrong"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.5,"y":.4}
+		font_size:16
+		color:"black"
+		on_press:
+			w.background_color="red"
+			w.background_normal=""
+			u.disabled=False
+			v.disabled=True
+			x.disabled=True
+			y.disabled=True
+	Button:
+		id:x
+		text:"c. Carl Sagan"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.0,"y":.3}
+		font_size:16
+		color:"black"
+		on_press:
+			x.background_color="red"
+			x.background_normal=""
+			u.disabled=False
+			v.disabled=True
+			w.disabled=True
+			y.disabled=True
+	Button:
+		id:y
+		text:"d. Albert Einstien"
+		size_hint:(.5,.1)
+		pos_hint:{"x":.5,"y":.3}
+        font_size:16
+		color:"black"
+		on_press:
+			y.background_color="red"
+			y.background_normal=""
+			u.disabled=False
+			v.disabled=True
+			w.disabled=True
+			x.disabled=True
+
+
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^#           
+#--------IDS:(u,v,w,x,y)-----------# 
+
+
+
+
+	    
+<FinalPage>:	   
+    name:'final_page'
+    Image:
+		source:"bg.png"
+		allow_stretch:True
+		pos_hint:{"x":.1,"y":.2}
+		size_hint:(.8,.8)
+	Button:
+        text:'Home'
+        size_hint:(1,.1)
+	    pos_hint:{'x':.0,'y':.0}
+	    on_press:
+	        root.manager.transition.direction="down"
+	        app.root.current='home'
